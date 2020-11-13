@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master CSS Finish Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link href="//db.onlinewebfonts.com/c/09c8fb44d2c62d99647e4ce58736293e?family=HMSansLatin-Regular" rel="stylesheet"
+        type="text/css" />
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cb2abbf1b0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="menu bg-light">
+        <div class="d-flex justify-content-between pt-5 ml-4 mr-4 sub_menu">
+            <div class="d-flex align-items-center">
+                <p class="mr-3"><a href="#" class="text-dark">Customer Service</a></p>
+                <p class="mr-3"><a href="#" class="text-dark">Newsletter</a></p>
+                <div class="dropdown">
+                    <p><button class="bg-transparent border-0 more_link_icon" id="more_link_icon"
+                            onclick="moreLinkFunction()">More Links</button></p>
+                    <div class="dropdown-menu" id="more_link_dropdown">
+                        <a class="dropdown-item" href="#">Store location</a>
+                        <a class="dropdown-item" href="#">Download Android</a>
+                        <a class="dropdown-item" href="#">Download iOS</a>
+                        <a class="dropdown-item" href="#">Enable high-contrast mode</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="user_dropdown">
+                    <p class="mr-3"><a href="#" class="text-dark user_menu_item" id="user_menu_btn">Sign in</a></p>
+                    <div class="user_dropdown-menu bg-light" id="user_dropdown">
+                        <button class="btn btn-dark sign_in_btn btn-block">Sign in</button>
+                        <a class="user_dropdown-item dropdown-item" href="#">My account</a>
+                        <a class="user_dropdown-item dropdown-item" href="#">Membership info</a>
+                        <small><a class="user_dropdown-item dropdown-item text-muted" href="#">Not a member yet? Join
+                                here for free!</a></small>
+                    </div>
+                </div>
+                <p class="mr-3"><a href="#" class="text-dark favourites_menu_item">Favourites</a></p>
+                <div class="bag_dropdown">
+                    <p><a href="#" class="text-dark bag_menu_item">Shopping bag (0)</a></p>
+                    <div class="bag_dropdown-menu bg-white">
+                        <p class="font-weight-bold">Your bag is empty</p>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <span>Order value</span>
+                            <span>$0</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <span>Total</span>
+                            <span>$0</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="logo text-center">
+            <a href="https://www2.hm.com/en_gb/index.html">
+                <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%22370%22%20height%3D%22244%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Ctitle%3E1.%20Foundation%2FLogotypes%2FH%26amp%3BM%2FRed%3C%2Ftitle%3E%3Cdefs%3E%3Cpath%20d%3D%22M259.895%207.413c13.424-6.618%2020.087-5.737%2020.232.946.19%208.7-1.098%2020.23-2.016%2028.604-4.983%2045.423-13.32%2082.543-13.954%20129.19%2021.94-56.802%2040.345-96.278%2064.03-144.909%207.53-15.47%2012.325-12.593%2018.503-15.343%2024.082-10.715%2024.984-4.133%2021.837%208.95-11.686%2048.552-41.54%20201.376-46.114%20224.907-1.328%206.807-8.715%203.923-10.644%201.26-8.57-11.85-18.225-12.036-17.14-19.919%205.37-39.233%2024.71-137.666%2029.75-160.863-25.719%2052.696-52.37%20118.566-66.053%20155.914-2.907%207.931-8.188%207.35-11.48%201.546-4.63-8.15-13.61-12.312-15.093-21.943-4.702-30.628%205.37-89.003%206.773-125.936-13.994%2040.342-37.49%20118.67-47.782%20154.057-4.256%2014.643-18.382%2012.253-14.627-2.018%2015.642-59.389%2049.326-164.425%2063.915-202.198%203.427-8.874%2012.406-8.569%2019.863-12.245zM174.6.115c4.26%201.025%203.913%206.05%201.31%2012.912-7.682%2020.247-18.335%2046.847-30.516%2078.212%207.658-.874%2011.811-1.17%2011.811-1.17%2010.994-1.358%2013.041%204.139%209.946%209.99-2.466%204.664-5.436%201.554-15.724%2016.89-5.796%208.642-15.259%2010.924-20.515%2012.076-12.662%2033.523-26.23%2070.916-39.415%20110.77-1.919%205.804-7.524%204.532-9.209%202.174-6.192-8.647-10.758-8.933-15.558-15.927-.577-1.132-1.706-2.672-1.027-5.448%203.53-14.425%2012.901-44.067%2027.156-83.091-17.958%203.892-37.387%208.076-45.408%209.94-9.626%2025.445-19.014%2050.967-27.908%2076.18-5.518%2015.64-19.88%2012.617-14.84-2.165%208.028-23.548%2016.89-48.004%2025.776-71.72-9.948-1.063-13.313-8.088-18.873-13.958-2.147-2.267-6.828-1.948-9.12-5.127-4.123-5.711-3.712-8.248%205.81-10.996a955.318%20955.318%200%200%201%2037.464-9.998c16.09-41.524%2030.63-77.144%2038.38-96.151C90.114-1.138%20105.514.226%2099.664%2014.674c-11.889%2029.363-24.079%2059.867-36.11%2090.799a880.98%20880.98%200%200%201%2044.748-8.87%202312.644%202312.644%200%200%201%2034.62-83.968c.845-1.937%203.31-4.678%205.878-5.118%208.092-1.385%2021.251-8.498%2025.8-7.402zm-27.552%20190.077c1.265-.773%202.524-1.715%203.767-2.75a756.514%20756.514%200%200%201-2.82-8.468%20139.528%20139.528%200%200%200-2.752%203.638c-5.386%207.396-2.197%2010.028%201.805%207.58zm7.167-35.065c6.67-7.53-6.516-10.681-3.48.836.17.65.382%201.413.62%202.254a98.19%2098.19%200%200%200%202.86-3.09zm6.941%2022.695c6.602-5.721%2012.908-.046%206.38%209.628-1.404%202.08-2.99%204.318-4.729%206.522a193.17%20193.17%200%200%200%202.146%205.877c3.375%208.654-5.488%2010.824-8.345%203.656-.25-.626-.51-1.297-.778-1.995-5.387%204.772-11.618%207.777-18.275%205.707-10.954-3.407-13.74-18.83-3.514-30.711%204.103-4.767%207.191-8.074%209.771-10.716a251.947%20251.947%200%200%201-1.819-6.17c-1.328-4.81-2.527-10.416%202.287-16.13%209.027-10.712%2029.971-1.203%2019.377%2015.289-2.552%203.972-5.535%207.724-8.647%2011.527a979.555%20979.555%200%200%200%203.26%2010.18%2078.304%2078.304%200%200%201%202.886-2.664z%22%20id%3D%22prefix__a%22%2F%3E%3C%2Fdefs%3E%3Cuse%20fill%3D%22%23E50010%22%20xlink%3Ahref%3D%22%23prefix__a%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E"
+                    width="68px" height="44px">
+            </a>
+        </div>
+
+        <div class="main_menu pb-5">
+            <ul class="d-flex list-unstyled flex-row justify-content-around">
+                <li>
+                    <div class="main-menu-women">
+                        <p class="mr-3"><a href="#" class="text-dark" id="main-menu-women">Women</a></p>
+                        <div class="main-menu-women-dropdown hide bg-white">
+                            <div class="row d-flex">
+                                <div class="col-2"></div>
+                                <div class="col-2">
+                                    <ul class="list-unstyled mt-0 mb-4">
+                                        <li class="sub-list-heading mb-2">New Arrivals</li>
+                                        <li class="sub-list-item"><a href="#">View all</a></li>
+                                        <li class="sub-list-item"><a href="#">Clothes</a></li>
+                                        <li class="sub-list-item"><a href="#">Shoes & Accessories</a></li>
+                                        <li class="sub-list-item"><a href="#">Underwear & Nightwear</a></li>
+                                    </ul>
+                                    <ul class="list-unstyled mt-0 mb-4">
+                                        <li class="sub-list-heading mb-2">Trending now</li>
+                                        <li class="sub-list-item"><a href="#">The Chrismast shop</a></li>
+                                        <li class="sub-list-item"><a href="#">Trend edit</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul class="list-unstyled mt-0 mb-4">
+                                        <li class="sub-list-heading mb-2">Shop by product</li>
+                                        <li class="sub-list-item"><a href="#">View all</a></li>
+                                        <li class="sub-list-item"><a href="#">Dresses</a></li>
+                                        <li class="sub-list-item"><a href="#">Shirts & Blousees</a></li>
+                                        <li class="sub-list-item"><a href="#">Tops</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul class="list-unstyled mt-0 mb-4">
+                                        <li class="sub-list-heading mb-2">Gift Cards</li>
+                                        <li class="sub-list-item"><a href="#">Gift cards</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="main_menu_item">
+                        <p class="mr-3"><a href="#" class="text-dark" id="main-menu-men">Men</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="main_menu_item">
+                        <p class="mr-3"><a href="#" class="text-dark" id="main-menu-divided">Divided</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="main_menu_item">
+                        <p class="mr-3"><a href="#" class="text-dark" id="main-menu-kids">Kids</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="main_menu_item">
+                        <p class="mr-3"><a href="#" class="text-dark" id="main-menu-home">H&M HOME</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="main_menu_item">
+                        <p class="mr-3"><a href="#" class="text-dark" id="main-menu-sale_?>">Sale</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="main_menu_item">
+                        <p class="mr-3"><a href="#" class="text-dark">Sustainability</a></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <div class="main_content bg-light pb-4">
+        <div class="container">
+            <div class="row message">
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <p><a href="#" class="text-dark">Free delivery for H&M members</a></p>
+                </div>
+                <div class="col-4">
+                    <p><a href="#" class="text-dark">Become a member and get 10% off your first purchase</a></p>
+                </div>
+                <div class="col-4">
+                    <p><a href="#" class="text-dark">H&M Members get to Pay Later - in collaboration with Klarna</a></p>
+                </div>
+            </div>
+            <div class="banner mt-5">
+                <div class="text-danger font-weight-bolder banner_header text-center">
+                    Want pre-access to Black Friday? Join H&M Membership!
+                </div>
+                <div class="text-center mt-3">You'll also get 10% off your first order, free standard delivery,
+                    exclusive discounts... the list
+                    goes on. And signing up is completely free!
+                </div>
+                <ul class="banner_links list-unstyled d-flex justify-content-center mt-3">
+                    <li class="border border-dark mr-2">
+                        <p class="banner_links_item m-0"><a href="#" class="text-dark list-unstyled">Become a member</a>
+                        </p>
+                    </li>
+                    <li class="border border-dark">
+                        <p class="banner_links_item m-0"><a href="#" class="text-dark list-unstyled">Read more</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="content_img mt-4">
+                <div class="card bg-dark text-white">
+                    <img src="https://lp2.hm.com/hmgoepprod?set=width[960],quality[80],options[limit]&source=url[https://www2.hm.com/content/dam/ladies_s02/october_2020/1402a/1402A-3x2-holiday-women.jpg]&scale=width[global.width],height[15000],options[global.options]&sink=format[jpg],quality[global.quality]"
+                        class="card-img">
+                    <div class="card-img-overlay card-img-overlay-title">
+                        <h5 class="card-text">On my wish list</h5>
+                        <h1 class="card-title">Cosy knits to love forever</h1>
+                        <span class="card-button">SHOP NOW</span>
+                    </div>
+                    <div class="card-img-overlay card-img-overlay-product">
+                        <h6 class="card-text">Cable knit cadigan</h6>
+                        <h5 class="card-text">$19.99</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="content_img mt-4">
+                <div class="card bg-dark text-white">
+                    <img src="https://lp2.hm.com/hmgoepprod?set=width[960],quality[80],options[limit]&source=url[https://www2.hm.com/content/dam/home_s02/october_2020/7082b/7082b-holiday-inspiration-3x2-UK-CEN.jpg]&scale=width[global.width],height[15000],options[global.options]&sink=format[jpg],quality[global.quality]"
+                        class="card-img">
+                    <div class="card-img-overlay card-img-overlay-title">
+                        <h1 class="card-title">Share your chrismast pririt</h1>
+                        <p class="card-text">A magical season</p>
+                        <span class="card-button">SHOP NOW</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content_img mt-4 gift-card">
+                <div class="card bg-dark text-white">
+                    <div class="gift-image">
+                        Image
+                    </div>
+                    <div
+                        class="gift-img-overlay card-img-overlay card-img-overlay-title d-flex align-items-center py-3">
+                        <h5 class="gift-card-title card-title">Perfect gifts to put under the tree!</h5>
+                        <p class="gift-card-text card-text mt-0">For everyone on your list.</p>
+                        <div class="d-flex justify-content-center">
+                            <ul class="gift_links list-unstyled d-flex justify-content-center mt-0 mb-0">
+                                <li class="border border-white p-2 mr-2 bg-transparent">
+                                    <p class="gift_links_item m-0"><a href="#" class="text-white list-unstyled">GIFTS
+                                            FOR HER</a>
+                                    </p>
+                                </li>
+                                <li class="border border-white p-2 mr-2 bg-transparent">
+                                    <p class="gift_links_item m-0"><a href="#" class="text-white list-unstyled">GIFTS
+                                            FOR HIM</a>
+                                    </p>
+                                </li>
+                                <li class="border border-white p-2 mr-2 bg-transparent">
+                                    <p class="gift_links_item m-0"><a href="#" class="text-white list-unstyled">GIFTS
+                                            FOR KIDS</a>
+                                    </p>
+                                </li>
+                                <li class="border border-white p-2 bg-transparent">
+                                    <p class="gift_links_item m-0"><a href="#" class="text-white list-unstyled">GIFT
+                                            CARDS</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="detail_prod_links my-4">
+                <h5>You might like</h5>
+
+                
+                <div class="card bg-transparent border-0" style="width: 88px;">
+                    <a href="#"><img src="https://picsum.photos/88" class="card-img-top rounded-circle"></a>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0 font-weight-bold">Kids</p>
+                        <p class="card-text text-center">Newborn 0-9 months</p>
+                    </div>
+                </div>
+
+            </div> -->
+
+        </div>
+    </div>
+    <div class="magazine text-center py-5">
+        <div class="container">
+            <h2 class="headeing font-weight-bolder">MAGAZINE</h2>
+            <h3 class="sub-heading mb-4">
+                <a href="#">READ H&M MAGAZINE</a>
+            </h3>
+            <ul class="article row d-flex justify-content-between pl-0">
+                <li class="col-4">
+                    <a href="#">
+                        <div class="card bg-transparent border-0">
+                            <img src="https://picsum.photos/320/213" class="card-img-top">
+                            <div class="aticle-card-body card-body bg-white">
+                                <p class="card-text text-center m-0 font-weight-bold">INSIDE H&M</p>
+                                <p class="card-text text-center font-weight-bold mb-5">The Jeans redesign project</p>
+                                <p>
+                                    Read the story
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-short"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="col-4">
+                    <a href="#">
+                        <div class="card bg-transparent border-0">
+                            <img src="https://picsum.photos/320/213" class="card-img-top">
+                            <div class="aticle-card-body card-body bg-white">
+                                <p class="card-text text-center m-0 font-weight-bold">INSIDE H&M</p>
+                                <p class="card-text text-center font-weight-bold mb-5">Meet the changemakers</p>
+                                <p>
+                                    Read the story
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-short"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="col-4">
+                    <a href="#">
+                        <div class="card bg-transparent border-0">
+                            <img src="https://picsum.photos/320/213" class="card-img-top">
+                            <div class="aticle-card-body card-body bg-white">
+                                <p class="card-text text-center m-0 font-weight-bold">INSIDE H&M</p>
+                                <p class="card-text text-center font-weight-bold mb-5">From old to new with Looops</p>
+                                <p>
+                                    Read the story
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-short"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="bg-light">
+        <div class="container py-5">
+            <div class="row list-links">
+                <div class="col-3">
+                    <p class="font-weight-bold">SHOP</p>
+                    <ul class="list-unstyled m-0">
+                        <li>
+                            <a href="#">Women</a>
+                        </li>
+                        <li>
+                            <a href="#">Men</a>
+                        </li>
+                        <li>
+                            <a href="#">Divided</a>
+                        </li>
+                        <li>
+                            <a href="#">Kids</a>
+                        </li>
+                        <li>
+                            <a href="#">H&M HOME</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <p class="font-weight-bold">CORPORATE INFOR</p>
+                    <ul class="list-unstyled m-0">
+                        <li>
+                            <a href="#">Carerr at H&M</a>
+                        </li>
+                        <li>
+                            <a href="#">About H&M group</a>
+                        </li>
+                        <li>
+                            <a href="#">Sustainability</a>
+                        </li>
+                        <li>
+                            <a href="#">Press</a>
+                        </li>
+                        <li>
+                            <a href="#">Investor Relations</a>
+                        </li>
+                        <li>
+                            <a href="#">Corporate Governance</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <p class="font-weight-bold">HELP</p>
+                    <ul class="list-unstyled m-0">
+                        <li>
+                            <a href="#">Customer Service</a>
+                        </li>
+                        <li>
+                            <a href="#">My Account</a>
+                        </li>
+                        <li>
+                            <a href="#">Store Locator</a>
+                        </li>
+                        <li>
+                            <a href="#">Legal & Privacy</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#">Gift Cards</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <p class="font-weight-bold">JOIN NOW</p>
+                    <ul class="list-unstyled m-0">
+                        <li>
+                            <a href="#" class="mb-5">Become a H&M member and get 10% off your next purchase!</a>
+                        </li>
+                        <li class="mt-4">
+                            <a href="#" class="font-weight-bold">
+                                READ MORE
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-short"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-media d-flex justify-content-center mt-5">
+                <ul class="list-unstyled d-flex flex-row">
+                    <li>
+                        <i class="fab fa-facebook-square fa-lg mr-5"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-twitter-square fa-lg mr-5"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram fa-lg mr-5"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-youtube fa-lg mr-5"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-pinterest fa-lg mr-5"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="copyright text-center">
+                <p class="mt-3 mb-0">The content of this site is copyright-protected and is the property of H&M Hennes &
+                    Mauritz AB. H&M's business concept is to offer fashion and quality at the best price in a..</p>
+                <a href="#">READ MORE</a>
+                <div class="logo mt-3">
+                    <a href="#">
+                        <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%22323%22%20height%3D%2242%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Ctitle%3E209A409D-4D20-46EE-9778-57304659E282%401.00x%3C%2Ftitle%3E%3Cdefs%3E%3Cpath%20d%3D%22M172.407%201.439c.031%201.497-.19%203.483-.347%204.925-.855%207.82-2.284%2014.21-2.393%2022.24%203.762-9.78%206.92-16.575%2010.982-24.947%201.29-2.663%202.112-2.168%203.173-2.642%204.129-1.844%204.284-.71%203.744%201.542-2.004%208.358-7.125%2034.668-7.908%2038.718-.228%201.173-1.496.676-1.826.218-1.47-2.04-3.126-2.071-2.94-3.428.922-6.756%204.238-23.702%205.102-27.695-4.41%209.072-8.98%2020.412-11.327%2026.842-.497%201.365-1.404%201.266-1.969.266-.794-1.403-2.333-2.12-2.588-3.778-.807-5.273.922-15.323%201.162-21.68-2.4%206.944-6.429%2020.429-8.194%2026.522-.73%202.52-3.152%202.11-2.508-.348%202.682-10.224%208.459-28.307%2010.96-34.81.589-1.527%202.127-1.475%203.406-2.108%202.302-1.14%203.446-.988%203.471.163zm-22.522-.145c1.387-.239%203.644-1.463%204.424-1.274.73.176.671%201.04.225%202.222-1.318%203.486-3.145%208.065-5.234%2013.465%201.314-.15%202.027-.2%202.027-.2%201.884-.235%202.236.711%201.705%201.719-.423.803-.933.268-2.696%202.907-.996%201.488-2.617%201.881-3.519%202.08-2.172%205.77-4.497%2012.208-6.76%2019.07-.328.998-1.289.78-1.578.373-1.062-1.489-1.845-1.537-2.67-2.741-.097-.195-.291-.46-.174-.939.605-2.484%202.212-7.586%204.657-14.304-3.08.67-6.412%201.39-7.787%201.712a614.858%20614.858%200%200%200-4.786%2013.114c-.946%202.693-3.41%202.172-2.545-.372a442.816%20442.816%200%200%201%204.42-12.348c-1.706-.182-2.283-1.392-3.236-2.402-.369-.391-1.172-.336-1.564-.883-.708-.984-.637-1.42.996-1.893a161.61%20161.61%200%200%201%206.425-1.721c2.76-7.149%205.253-13.281%206.582-16.553%201.024-2.522%203.665-2.287%202.662.2-2.039%205.055-4.13%2010.307-6.192%2015.632%202.885-.65%205.467-1.148%207.673-1.527a396.956%20396.956%200%200%201%205.937-14.456c.145-.333.568-.806%201.008-.88zm1.624%2029.78c.169-.163.334-.323.494-.461%201.134-.985%202.215-.008%201.095%201.658-.24.358-.514.742-.812%201.122.141.404.268.754.369%201.012.578%201.49-.94%201.863-1.431.63l-.135-.346c-.923.821-1.991%201.34-3.132.984-1.88-.586-2.356-3.241-.602-5.287a38.362%2038.362%200%200%201%201.675-1.844%2043.18%2043.18%200%200%201-.312-1.062c-.228-.829-.434-1.794.392-2.777%201.547-1.845%205.14-.208%203.323%202.631-.438.684-.95%201.33-1.484%201.985.178.566.369%201.164.56%201.755zM10.519%2021.29H2.147v7.165H0V13.256h2.147v5.971h8.372v-5.97h2.147v15.198h-2.147V21.29zm17.171-2.063v2.063h-4.936v5.102h6.654v2.064h-8.8v-15.2h8.585v2.062h-6.44v3.91h4.937zm10.71-1.932v11.16h-2.146V13.256h1.501l9.017%2011.161v-11.16h2.147v15.198h-1.502L38.4%2017.295zm20.607%200v11.16h-2.146V13.256h1.501l9.015%2011.161v-11.16h2.148v15.198h-1.503l-9.015-11.16zm25.543%201.932v2.063h-4.937v5.102h6.654v2.064h-8.802v-15.2h8.588v2.062h-6.44v3.91h4.937zm8.778%205.429c.88%201.085%202.124%201.954%203.67%201.954%201.396%200%202.62-.912%202.62-2.28%200-2.323-3.178-2.584-5.174-3.91-1.074-.716-1.911-1.758-1.911-3.343%200-2.214%201.932-4.038%204.55-4.038%201.912%200%203.242.847%204.038%201.52l-1.267%201.585c-.816-.695-1.74-1.042-2.683-1.042-1.246%200-2.49.716-2.49%202.04%200%201.933%203.197%202.345%205.13%203.649%201.009.673%201.953%201.736%201.953%203.474%200%202.67-2.04%204.407-4.657%204.407-2.062%200-3.93-.912-5.26-2.54l1.481-1.476zm124.56.542h-1.502l-4.4-6.97v10.227h-2.147V13.256h1.503l5.795%209.271%205.796-9.27h1.502v15.198h-2.147V18.228l-4.4%206.97zm31.98-3.04v-8.902h2.147v9.01c0%201.434.344%202.324.945%202.997.752.847%201.868%201.347%203.134%201.347%201.267%200%202.383-.5%203.134-1.347.601-.673.945-1.563.945-2.997v-9.01h2.147v8.903c0%202.04-.601%203.452-1.567%204.516-1.138%201.237-2.813%201.997-4.659%201.997-1.846%200-3.52-.76-4.659-1.997-.965-1.064-1.566-2.475-1.566-4.516zm-9.184%202.389h-6.334l-1.567%203.909h-2.232l6.225-15.2h1.503l6.226%2015.2h-2.234l-1.587-3.91zm-5.475-2.063h4.637l-2.318-5.646-2.319%205.646zm52.631%205.97V13.257h2.147v15.199h-2.147zm8.457-15.198H306.6v2.063h-4.078v13.136h-2.146V15.319h-4.08v-2.063zm16.184%200h10.089v1.411l-7.813%2011.725H323v2.063h-11.162v-1.411l7.856-11.725h-7.213v-2.063zm-40.288%208.034v7.166h-2.147v-15.2h5.26c1.374%200%202.232.325%202.918.89a4.032%204.032%200%200%201%201.481%203.127c0%201.26-.577%202.389-1.48%203.127a3.588%203.588%200%200%201-1.76.803l5.387%207.253h-2.597l-5.345-7.166h-1.717zm3.006-2.063c.966%200%201.458-.217%201.803-.564.343-.348.557-.848.557-1.39%200-.542-.214-1.043-.557-1.39-.345-.348-.837-.565-1.803-.565h-3.006v3.91h3.006zm-125.924%2012.21c-.924%201.274-.377%201.727.31%201.306.217-.133.432-.296.646-.474-.164-.48-.326-.97-.481-1.45-.16.205-.32.405-.475.619zm1.047-4.2c.16-.167.32-.337.491-.532%201.144-1.295-1.117-1.838-.596.145.028.11.065.244.105.386z%22%20id%3D%22prefix__a%22%2F%3E%3C%2Fdefs%3E%3Cuse%20fill%3D%22%23222%22%20xlink%3Ahref%3D%22%23prefix__a%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E"
+                            width="200px" height="24px">
+                    </a>
+                </div>
+                <div class="language mt-3 mb-3">
+                    <a href="#"><span>Choose country</span></a>
+                    <span> |</span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./node_modules/bootstrap/js/dist/dropdown.js"></script>
+
+</body>
+
+</html>
